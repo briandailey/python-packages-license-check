@@ -14,13 +14,12 @@ def main():
         found_license = False
         try:
             for line in installed_distribution.get_metadata_lines('PKG-INFO'):
-                if 'License:' in line:
+                if 'License: ' in line:
                     (k, v) = line.split(': ', 1)
-                    if k == "License":
-                        sys.stdout.write("{project_name}: {license}\n".format(
-                            project_name=installed_distribution.project_name,
-                            license=v))
-                        found_license = True
+                    sys.stdout.write("{project_name}: {license}\n".format(
+                        project_name=installed_distribution.project_name,
+                        license=v))
+                    found_license = True
         except IOError as e:
             # usually because the PKG-INFO file was not found.
             sys.stderr.write("Failed to get license information for {project_name}\n".format(
