@@ -7,6 +7,11 @@ Usage:
 
     ./check.py
 
+Output:
+
+    pkgname1: LICENSE
+    pkgname2: LICENSE
+
 It's pretty simple!
 
 
