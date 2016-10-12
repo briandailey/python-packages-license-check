@@ -3,7 +3,7 @@ import pkg_resources
 import argparse
 import sys
 
-from pip.util import get_installed_distributions
+from pip.utils import get_installed_distributions
 
 
 def main():
